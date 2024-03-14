@@ -4,23 +4,28 @@ import 'package:integration_test/integration_test.dart';
 import 'package:my_flutter_app/pages/login_page.dart' as app;
 
 void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized(); // สำคัญสำหรับการทดสอบ integration
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  group('Login Integration Test', () {
-    testWidgets('สามารถ login และนำทางไปหน้าหลักได้', (WidgetTester tester) async {
-      app.main(); // เริ่มต้นแอป
-      await tester.pumpAndSettle(); // รอการโหลดแอป
+  group('Login and Logout Integration Test', () {
+    testWidgets('ทดสอบการ login และ logout', (WidgetTester tester) async {
+      app.main();
+      await tester.pumpAndSettle();
 
-      // จำลองการป้อนข้อมูล username และ password
+      // ทดสอบการ login
       await tester.enterText(find.byKey(Key('usernameField')), 'testuser');
       await tester.enterText(find.byKey(Key('passwordField')), 'password123');
-
-      // กดปุ่ม login
       await tester.tap(find.byKey(Key('loginButton')));
-      await tester.pumpAndSettle(); // รอการนำทาง
+      await tester.pumpAndSettle();
 
-      // ตรวจสอบว่าได้นำทางไปยังหน้าหลักหลังจาก login สำเร็จ
+      // ตรวจสอบว่าเข้าสู่หน้าหลักหลังจากการ login
       expect(find.text('Welcome to the Home Page!'), findsOneWidget);
+
+      // ทดสอบการ logout
+      await tester.tap(find.byKey(Key('logoutButton'))); // สมมติว่าคุณมีปุ่ม logout ที่มี Key ว่า 'logoutButton'
+      await tester.pumpAndSettle();
+
+      // ตรวจสอบว่ากลับมายังหน้า login หลังจากการ logout
+      expect(find.byKey(Key('loginButton')), findsOneWidget); // ตรวจสอบโดยหาปุ่ม login ในหน้า login
     });
   });
 }

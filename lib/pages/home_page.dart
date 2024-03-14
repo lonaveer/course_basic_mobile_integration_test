@@ -21,6 +21,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 20), // เพิ่มช่องว่างระหว่างข้อความกับปุ่ม
             ElevatedButton(
+              key: Key('logoutButton'),
               onPressed: () {
                 // กดเพื่อนำทางกลับไปยังหน้า Login
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
