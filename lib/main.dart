@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_app/pages/login_page.dart';
+// import 'package:my_flutter_app/pages/login_page.dart';
+import 'package:my_flutter_app/pages/sign_in_page.dart';
 
 void main() {
   // runApp(const MyApp());
-  runApp(LoginPageApp());
+  // runApp(LoginPageApp());
+  runApp(SignInPageApp());
 }
 
 class MyApp extends StatelessWidget {
