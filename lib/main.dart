@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 // import 'package:my_flutter_app/pages/login_page.dart';
-import 'package:my_flutter_app/pages/sign_in_page.dart';
+// import 'package:my_flutter_app/pages/sign_in_page.dart';
+import 'package:my_flutter_app/pages/animated_opacity_page.dart';
 
 void main() {
   // runApp(const MyApp());
   // runApp(LoginPageApp());
-  runApp(SignInPageApp());
+  // runApp(SignInPageApp());
+  runApp(AnimatedOpacityPageApp());
 }
 
 class MyApp extends StatelessWidget {
