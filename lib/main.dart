@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 // import 'package:my_flutter_app/pages/login_page.dart';
 // import 'package:my_flutter_app/pages/sign_in_page.dart';
 // import 'package:my_flutter_app/pages/animated_opacity_page.dart';
-import 'package:my_flutter_app/pages/home_page_2.dart';
+// import 'package:my_flutter_app/pages/home_page_2.dart';
+import 'package:my_flutter_app/pages/home_page_3.dart';
 
 void main() {
   // runApp(const MyApp());
   // runApp(LoginPageApp());
   // runApp(SignInPageApp());
   // runApp(AnimatedOpacityPageApp());
-  runApp(HomePage2App());
+  // runApp(HomePage2App());
+  runApp(HomePage3App());
 }
 
 class MyApp extends StatelessWidget {
